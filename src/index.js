@@ -4,6 +4,11 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+const cors= require('cors');
+const {MONGOURI} = require('./config/keys.js');
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(bodyParser.json());
 
 mongoose
