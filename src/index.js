@@ -22,6 +22,13 @@ mongoose
 
 const { Department, Employee } = require("./models/models");
 
+
+app.get("/",async(req,res)=>{
+  res.send("Hello")
+})
+
+
+
 app.post("/employees", async (req, res) => {
   const { firstName, lastName, email, departmentId, dateOfJoining, salary } =
     req.body;
