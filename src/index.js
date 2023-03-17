@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
-
+app.use("/api")
 mongoose
   .connect(
     "mongodb+srv://Rsangram890:hPZbgpmJvegZil8Q@cluster0.osqcdhn.mongodb.net/Jaykisan?retryWrites=true&w=majority",
@@ -46,7 +46,7 @@ app.post("/departments", async (req, res) => {
 });
 
 // get employee data with join from department table
-app.get("/employees/:id", async (req, res) => {
+app.get("/api/employees/:id", async (req, res) => {
   const employee = await Employee.findById(req.params.id).populate(
     "departmentId"
   );
