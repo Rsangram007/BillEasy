@@ -1,7 +1,15 @@
 {
-  "build": {
-    "env": {
-      "NODEJS_AWS_HANDLER_NAME": "handler"
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    }
+  ]
 }
