@@ -65,6 +65,25 @@ app.get("/employees-by-department", async (req, res) => {
   res.send(employees);
 });
 
+// // if (process.env.NODE_ENV == 'production') {
+// //   const path = require('path')
+
+
+//   app.get("*", function (_, res) {
+//       res.sendFile(
+//           path.join(__dirname, "../client/build/index.html"),
+//           function (err) {
+//               if (err) {
+//                   res.status(500).send(err)
+//               }
+//           }
+//       )
+//   })
+// //}
+
+
+
+
 app.listen(3000, () => {
   console.log("API server is running on port 3000");
 });
